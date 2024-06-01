@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<style>
+    .main{
+        display: flex;
+        justify-content: center;
+        height: 380px;
+    }
+    .circle{
+        border: 1px solid black;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        text-align: center;
+    }
+ 
+    input {
+      padding: 12px 5px;
+      width: 90%;
+      margin: 5px auto;
+      text-align: end;
+    }
+</style>
+
+<body>
+    <h1 style="text-align: center;  font-size: 70px;
+    text-shadow: 2px 2px rgb(255, 196, 0);
+    color: rgb(255, 123, 0);">Calculator</h1><br/><br/>
+
+    <div class="main">
+        <div class="p-2" style="background-color: rgb(247, 233, 156);">
+           <div class="box px-3 py-3" style="border: 1px solid black; background-color: rgb(0, 0, 0);">
+            
+            <input type="text" readonly>
+
+
+            <div>
+             <button class="btn circle text center" style="background-color: rgb(8, 197, 204);color: white; margin-right: 17px;margin-bottom: 10px;" onclick="clearall()"><b>AC</b></button>
+             <!-- <button class="btn circle text center" style="background-color: rgb(255, 255, 255);margin-right: 17px;margin-bottom: 10px" onclick="myfunc('AC')"><b id="cut"><i class="bi bi-x-square"></i></b></button> -->
+             <button class="btn circle text center" style="background-color: rgb(247, 246, 194);margin-right: 17px;margin-bottom: 10px"><b id="cut">cut</b></button>
+             <button class="btn circle text center" style="background-color: rgb(184, 208, 253);margin-right: 17px;margin-bottom: 10px" onclick="myfunc('%')"><b>%</b></button>
+             <button class="btn circle text center" style="background-color: rgb(247, 185, 255);margin-bottom: 10px"onclick="myfunc('/')"><b>/</b></button>            
+            </div>
+
+            <!-- ******************************************************************************* -->
+            <div>
+                <button class="btn circle text center" style="background-color: rgb(255, 217, 0);margin-right: 17px;margin-bottom: 10px"onclick="myfunc('7')"><b>7</b></button>
+                <button class="btn circle text center" style="background-color: rgb(0, 255, 136);margin-right: 17px;margin-bottom: 10px"onclick="myfunc('8')"><b>8</b></button>
+                <button class="btn circle text center" style="background-color: rgb(255, 146, 4);margin-right: 17px;margin-bottom: 10px"onclick="myfunc('9')"><b>9</b></button>
+                <button class="btn circle text center" style="background-color: rgb(255, 191, 191);margin-bottom: 10px"onclick="myfunc('*')"><b>*</b></button>
+            </div>
+            <!-- ****************************************************************************************** -->
+            <div>
+                <button class="btn circle text center" style="background-color: rgb(134, 93, 230);margin-right: 17px;margin-bottom: 10px"onclick="myfunc('4')"><b>4</b></button>
+                <button class="btn circle text center" style="background-color: rgb(224, 45, 90);margin-right: 17px;margin-bottom: 10px"onclick="myfunc('5')"><b>5</b></button>
+                <button class="btn circle text center" style="background-color: rgb(250, 234, 5);margin-right: 17px;margin-bottom: 10px"onclick="myfunc('6')"><b>6</b></button>
+                <button class="btn circle text center" style="background-color: rgb(161, 184, 235);margin-bottom: 10px"onclick="myfunc('-')"><b>-</b></button>
+            </div>
+            <!-- ********************************************************************************************* -->
+            <div>
+                <button class="btn circle text center" style="background-color: rgb(46, 199, 84);margin-right: 17px;margin-bottom: 10px"onclick="myfunc('1')"><b>1</b></button>
+                <button class="btn circle text center" style="background-color: rgb(217, 80, 230);margin-right: 17px;margin-bottom: 10px"onclick="myfunc('2')"><b>2</b></button>
+                <button class="btn circle text center" style="background-color: rgb(243, 114, 9);margin-right: 17px;margin-bottom: 10px"onclick="myfunc('3')"><b>3</b></button>
+                <button class="btn circle text center" style="background-color: rgb(248, 208, 156);margin-bottom: 10px"onclick="myfunc('+')"><b>+</b></button>
+            </div>
+            <!-- *************************************************************************************************** -->
+            <button class="btn circle text center" style="background-color: rgb(38, 161, 170);margin-right: 17px;margin-bottom: 10px"onclick="myfunc('0')"><b>0</b></button>
+            <button class="btn circle text center" style="background-color: rgb(255, 183, 28);margin-right: 17px;margin-bottom: 10px"onclick="myfunc('00')"><b>00</b></button>
+            <button class="btn circle text center" style="background-color: rgb(255, 5, 88);margin-right: 17px;margin-bottom: 10px"onclick="myfunc('.')"><b>.</b></button>
+            <button class="btn circle text center" style="background-color: rgb(92, 250, 0);margin-bottom: 10px"onclick="result()"><b>=</b></button>
+
+
+           </div>
+        </div>
+    </div>
+
+
+
+<script>
+
+    
+     let inputField = document.querySelector("input");
+     let cutbtn=document.querySelector("#cut")
+
+     cutbtn.addEventListener("click",()=>{
+        let data=inputField.value.slice(0,-1)
+        inputField.value=data
+     })
+
+
+
+function clearall(){
+  inputField.value=""
+}
+function myfunc(abc) {
+  inputField.value += abc;
+}
+
+
+function result(){
+let ans=eval(inputField.value)
+
+inputField.value=ans
+}
+
+
+
+
+</script>
+
+</body>
+
+</html>
